@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\ContactRepository;
+use App\Models\User;
+use App\RepositoryContract;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(RepositoryContract::class, ContactRepository::class);
     }
 
     /**
@@ -19,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Route::bind('user', function($username) {
+            return User::where( 'name', $username)->firstOrFail();
+        });
     }
 }
