@@ -1,4 +1,4 @@
-# Live Laravel 
+# Appunti Live su Laravel - Backend Development 2/23 
 ## Backend Web Developer - Modulo 3 Laravel - Edizione 2/23
 
 Benvenuti nel progetto dimostrativo di questo corso su **Laravel**! 🎉
