@@ -1,17 +1,17 @@
-# Live Laravel 
+# Appunti Live su Laravel - Backend Development 2/23 
 ## Backend Web Developer - Modulo 3 Laravel - Edizione 2/23
 
 Benvenuti nel progetto dimostrativo di questo corso su **Laravel**! 🎉
 
 Questo repository è stato creato per supportare le lezioni e per fornire agli studenti un ambiente pratico dove poter
-implementare quanto appreso durante il corso.
+rivedere quanto presentato durante il corso.
 
 ## Obiettivi del Progetto
 
-- Approfondire concetti fondamentali di **Laravel**.
-- Mettere in pratica nozioni teoriche tramite implementazioni reali e guidate.
+- Approfondire concetti fondamentali di **Laravel** visti nella parte teorica.
+- Messa in pratica di nozioni teoriche tramite implementazioni reali e guidate.
 - Supportare la presentazione degli argomenti trattati durante il corso.
-- Creare una base per ulteriori sviluppi o sperimentazioni post-corso.
+- Creare una base di studio per ulteriori sviluppi e approfondimenti sperimentali post-corso
 
 ## Struttura del Progetto
 
