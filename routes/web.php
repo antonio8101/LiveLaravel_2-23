@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\FirstController;
 use App\Http\Controllers\NewsPippoController;
 use App\Http\Controllers\RubricaController;
 use App\Http\Controllers\SamplePippoController;
+use App\Http\Controllers\SecondController;
 use App\Http\Controllers\UserController;
 use App\Models\Post;
 use App\Models\User;
@@ -64,3 +66,7 @@ Route::prefix('rubrica')->group(function(){
     Route::patch('/{contact}', [ RubricaController::class, 'update' ] );
     Route::get('/{contact}', [ RubricaController::class, 'destroy' ] );
 });
+
+// Dependency injection -- test
+Route::get("/a", [FirstController::class, "do"]);
+Route::get("/b", [SecondController::class, "do"]);

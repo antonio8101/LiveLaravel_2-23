@@ -1,4 +1,4 @@
 <div>
-    Testo del news {{$news_id}}
+    Testo del news {{ $news_id }}
 </div>
 

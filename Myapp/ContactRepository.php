@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace MyApp;
 
 use Exception;
 use Nette\NotImplementedException;

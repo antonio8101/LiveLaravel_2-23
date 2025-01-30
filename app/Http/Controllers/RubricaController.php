@@ -2,24 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\RepositoryContract;
+use MyApp\Facade\RepositoryContractFacade;
 use Illuminate\Http\Request;
 
 class RubricaController extends Controller
 {
-    private RepositoryContract $repo;
-
-    public function __construct(RepositoryContract $repo){
-
-        $this->repo = $repo;
-    }
-
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return $this->repo->all();
+        return RepositoryContractFacade::all();
     }
 
     /**
@@ -27,7 +20,7 @@ class RubricaController extends Controller
      */
     public function create()
     {
-        // return a form
+        RepositoryContractFacade::save([]);
     }
 
     /**
@@ -35,7 +28,8 @@ class RubricaController extends Controller
      */
     public function store(Request $request)
     {
-        return $this->repo->save([]);
+        return RepositoryContractFacade::save([]);
+        //return $this->repo->save([]);
     }
 
     /**
@@ -43,7 +37,7 @@ class RubricaController extends Controller
      */
     public function show(string $id)
     {
-        return $this->repo->get($id);
+        return RepositoryContractFacade::get($id);
     }
 
     /**
@@ -67,6 +61,6 @@ class RubricaController extends Controller
      */
     public function destroy(string $id)
     {
-        $this->repo->delete($id);
+        return RepositoryContractFacade::delete($id);
     }
 }

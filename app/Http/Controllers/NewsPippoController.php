@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\NewsCategory;
+use Illuminate\Support\Facades\View;
 
 class NewsPippoController extends Controller
 {
@@ -12,8 +13,9 @@ class NewsPippoController extends Controller
     }
 
     public function get(Request $request, $id){
-        return view('news.detail', [
-            "news_id" => $id
+
+        return View::make('news.detail', [
+            "news_id" => $id,
         ]);
     }
 

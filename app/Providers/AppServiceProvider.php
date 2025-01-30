@@ -2,9 +2,8 @@
 
 namespace App\Providers;
 
-use App\ContactRepository;
+use App\Http\Controllers\FirstController;
 use App\Models\User;
-use App\RepositoryContract;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
@@ -15,7 +14,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(RepositoryContract::class, ContactRepository::class);
+        $this->app->when(FirstController::class)->needs('$param1')->give("PIPPO");
+        $this->app->when(FirstController::class)->needs('$p1')->give("PIPPO");
+        
+        $this->app->when(FirstController::class)->needs('$p1')->give(function(){
+            return [
+                "x1",
+                "x2",
+                "x3"
+            ];
+        });
     }
 
     /**
