@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Service\TradingFinance\TradingFinanceInfo;
 use Service\TradingFinance\TradingFinanceInfoContract;
+use Service\TradingFinance\TradingFinanceInfoWithCache;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,8 +28,12 @@ class AppServiceProvider extends ServiceProvider
             ];
         });
 
+//        $this->app->bind(TradingFinanceInfoContract::class, function (){
+//            return new TradingFinanceInfo();
+//        });
+
         $this->app->bind(TradingFinanceInfoContract::class, function (){
-            return new TradingFinanceInfo();
+            return new TradingFinanceInfoWithCache();
         });
     }
 

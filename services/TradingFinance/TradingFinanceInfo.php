@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\URL;
 class TradingFinanceInfo implements TradingFinanceInfoContract {
 
     private string $host = "apidojo-yahoo-finance-v1.p.rapidapi.com";
-    private string $rapidApiKey = "8887afb3e0msh94aba2b167f26d8p171807jsncdc623db3ea9";
+    private string $rapidApiKey = "YOUR_API_KEY";
     private string $baseUrl = 'https://apidojo-yahoo-finance-v1.p.rapidapi.com';
 
     public function getDailyGainers( Market $market = Market::US ) : array {
