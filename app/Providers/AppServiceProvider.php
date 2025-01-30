@@ -6,6 +6,8 @@ use App\Http\Controllers\FirstController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Service\TradingFinance\TradingFinanceInfo;
+use Service\TradingFinance\TradingFinanceInfoContract;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,13 +18,17 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->when(FirstController::class)->needs('$param1')->give("PIPPO");
         $this->app->when(FirstController::class)->needs('$p1')->give("PIPPO");
-        
+
         $this->app->when(FirstController::class)->needs('$p1')->give(function(){
             return [
                 "x1",
                 "x2",
                 "x3"
             ];
+        });
+
+        $this->app->bind(TradingFinanceInfoContract::class, function (){
+            return new TradingFinanceInfo();
         });
     }
 
