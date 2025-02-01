@@ -23,7 +23,7 @@ Route::get('/user', function (Request $request) {
 //    fn ( Market $market, string $quote, TradingFinanceInfoContract $service ) => $service->getQuotes( $market, $quote )
 //);
 
-Route::get('/trading/gainers/{market}', fn( Market $market ) => TradingFinanceInfoFacade::getDailyGainers( $market ) );
+Route::get('/trading/gainers/{market}', fn( Market $market ) => view('trading.gainers', [ 'market' => TradingFinanceInfoFacade::getDailyGainers( $market ) ] ) );
 
 Route::get('/trading/losers/{market}', fn( Market $market ) => TradingFinanceInfoFacade::getDailyLosers( $market ) );
 

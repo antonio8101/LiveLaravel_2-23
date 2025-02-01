@@ -3,14 +3,13 @@
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\NewsPippoController;
 use App\Http\Controllers\RubricaController;
-use App\Http\Controllers\SamplePippoController;
 use App\Http\Controllers\SecondController;
 use App\Http\Controllers\UserController;
 use App\Models\Post;
-use App\Models\User;
-use App\NewsCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Service\TradingFinance\Market;
+use Service\TradingFinance\TradingFinanceInfoFacade;
 
 // Standard home root
 Route::get('/', fn () => view('welcome'));
@@ -70,3 +69,6 @@ Route::prefix('rubrica')->group(function(){
 // Dependency injection -- test
 Route::get("/a", [FirstController::class, "do"]);
 Route::get("/b", [SecondController::class, "do"]);
+
+
+Route::get('/trading/gainers/{market}', fn( Market $market ) => view('trading.gainers', [ 'market' => TradingFinanceInfoFacade::getDailyGainers( $market ) ] ) );

@@ -15,13 +15,8 @@ class WriteSomethingMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        // some login here ...
 
-        
-
-        if($request->route()->named('newsfiltered')){
-            echo "SOMETHING!!!!!";
-        }
-        
         return $next($request);
     }
 }
