@@ -21,6 +21,13 @@ class Film extends Model
         'language_id' => 1
     ];
 
+    public $hidden = [
+        'deleted_at',
+        'last_update',
+        'language_id',
+        'original_language_id'
+    ];
+
     public function actors()
     {
         return $this->belongsToMany(Actor::class, 'film_actor', 'film_id', 'actor_id');
